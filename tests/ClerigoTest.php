@@ -49,4 +49,12 @@ class ClerigoTest extends TestCase
      $this->assertEquals(0, $clerigo->defender(10), "Al daño final no puede ser menos de 0");
    }
 
+   public function testSubirNivel() {
+    $clerigo = new Clerigo('Elrond', 8, 90, 30);
+    $this->assertEquals(8, $clerigo->nivel, 'El nivel no es el creado');
+
+    $clerigo->subirNivel();
+    $this->assertEquals(9, $clerigo->nivel, 'El nivel no ha aumentado');
+   }
+
 }
