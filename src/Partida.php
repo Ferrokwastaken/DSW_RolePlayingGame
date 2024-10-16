@@ -32,5 +32,11 @@
         return $personaje instanceof $class;
       });
     }
+
+    public function eliminarMuertos() : void {
+      $this->personajes = array_filter($this->personajes, function($p) {
+        return $p->puntosDeVida > 0;
+      });
+    }
   }
 ?>
